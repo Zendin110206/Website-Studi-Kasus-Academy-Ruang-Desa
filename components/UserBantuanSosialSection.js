@@ -1,3 +1,5 @@
+// frontend/components/UserBantuanSosialSection.js
+
 "use client";
 
 import { Cog6ToothIcon } from "@heroicons/react/24/outline";

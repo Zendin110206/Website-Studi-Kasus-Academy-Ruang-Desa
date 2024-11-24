@@ -1,4 +1,4 @@
-// app/forgot-password/page.js
+// frontend/app/forgotpass/page.js
 "use client";
 
 import { useState } from "react";
@@ -79,7 +79,7 @@ export default function ForgotPassword() {
       <div className="absolute inset-0 bg-black opacity-40"></div>
 
       <motion.div
-        className="relative bg-white bg-opacity-90 backdrop-blur-md p-8 rounded-lg shadow-lg max-w-3xl w-full z-10"
+        className="relative bg-white overflow-x-hidden bg-opacity-90 backdrop-blur-md p-8 rounded-lg shadow-lg max-w-3xl w-full z-10"
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6 }}
@@ -128,9 +128,7 @@ export default function ForgotPassword() {
         </div>
 
         {/* Pesan Error dan Success */}
-        {error && (
-          <div className="mb-4 text-red-500 text-center">{error}</div>
-        )}
+        {error && <div className="mb-4 text-red-500 text-center">{error}</div>}
         {success && (
           <div className="mb-4 text-green-500 text-center">{success}</div>
         )}

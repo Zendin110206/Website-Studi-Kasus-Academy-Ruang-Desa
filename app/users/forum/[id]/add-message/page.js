@@ -1,4 +1,4 @@
-// app/users/forum/[id]/add-message/page.js
+// frontend/app/users/forum/[id]/add-message/page.js
 
 import UserHeader from "../../../../../components/UserHeader";
 import Footer from "../../../../../components/Footer";
@@ -8,7 +8,7 @@ const AddMessagePage = ({ params }) => {
   const { id } = params;
 
   return (
-    <div className="bg-white min-h-screen">
+    <div className="relative bg-white w-full overflow-x-hidden">
       {/* Header */}
       <UserHeader />
 

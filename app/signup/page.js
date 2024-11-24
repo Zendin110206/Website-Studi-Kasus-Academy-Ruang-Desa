@@ -1,4 +1,4 @@
-// app/signup/page.js
+// frontend/app/signup/page.js
 "use client";
 
 import { useState } from "react";
@@ -57,7 +57,7 @@ export default function SignUp() {
       <div className="absolute inset-0 bg-black opacity-40"></div>
 
       <motion.div
-        className="relative bg-white bg-opacity-80 backdrop-blur-md p-8 rounded-lg shadow-lg max-w-md w-full z-10"
+        className="relative bg-white w-full overflow-x-hidden bg-opacity-80 backdrop-blur-md p-8 rounded-lg shadow-lg max-w-md w-full z-10"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -65,9 +65,7 @@ export default function SignUp() {
         <h2 className="text-gray-800 text-3xl font-semibold mb-6 text-center">
           Sign Up
         </h2>
-        {error && (
-          <div className="mb-4 text-red-500 text-center">{error}</div>
-        )}
+        {error && <div className="mb-4 text-red-500 text-center">{error}</div>}
         {success && (
           <div className="mb-4 text-green-500 text-center">{success}</div>
         )}

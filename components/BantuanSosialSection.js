@@ -1,4 +1,4 @@
-// components/BantuanSosialSection.js
+// frontend/components/BantuanSosialSection.js
 "use client";
 
 import { Cog6ToothIcon } from "@heroicons/react/24/outline";
@@ -29,10 +29,10 @@ const BantuanSosialSection = () => {
         <div className="absolute top-4 right-4">
           <Link
             href="/minister/bantuan-sosial" // Mengarah ke halaman Bantuan Sosial
-            className="flex items-center justify-center bg-[#DCCC3D] rounded-full p-4 shadow-xl hover:scale-110 transition-transform duration-300 focus:outline-none"
+            className="flex items-center justify-center bg-[#DCCC3D] rounded-full p-3 shadow-xl hover:scale-110 transition-transform duration-300 focus:outline-none sm:p-4"
             aria-label="Settings"
           >
-            <Cog6ToothIcon className="h-12 w-12 text-[#0C1E28]" />
+            <Cog6ToothIcon className="h-10 w-10 text-[#0C1E28] sm:h-12 sm:w-12" />
           </Link>
         </div>
 

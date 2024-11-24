@@ -1,4 +1,4 @@
-// components/Header.js
+// frontend/components/Header.js
 "use client"; // Ensure this is at the very top
 
 import { useState, useEffect } from "react";
@@ -50,7 +50,7 @@ const Header = ({ openContactModal }) => { // Receive openContactModal as prop
               alt="Logo"
               width={180}
               height={180}
-              className="w-32 h-auto md:w-28" // Responsive width
+              className="w-20 h-auto md:w-28" // Responsive width
               priority
             />
           </Link>

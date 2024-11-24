@@ -1,9 +1,10 @@
+// frontend/app/minister/program/delete/page.js
+
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
-import MinisterHeader2 from "../../../../components/MinisterHeader2"; // Pastikan path sesuai
-import Footer2 from "../../../../components/Footer2"; // Pastikan path sesuai
+import MinisterHeader2 from "../../../../components/MinisterHeader2";
+import Footer2 from "../../../../components/Footer2";
 import { useState } from "react";
 import { CheckIcon } from "@heroicons/react/24/solid";
 
@@ -11,7 +12,11 @@ const HapusProgramPage = () => {
   const [selectedPrograms, setSelectedPrograms] = useState([]);
 
   const programs = [
-    { id: 1, title: "Bantuan Sosial", image: "/assets/minister/bantuan sosial 1.png" },
+    {
+      id: 1,
+      title: "Bantuan Sosial",
+      image: "/assets/minister/bantuan sosial 1.png",
+    },
     { id: 2, title: "Hiking", image: "/assets/minister/program hiking 1.png" },
     { id: 3, title: "Vaksinasi", image: "/assets/minister/vaksinasi 2.png" },
     // Tambahkan program lain jika ada
@@ -33,16 +38,18 @@ const HapusProgramPage = () => {
   };
 
   return (
-    <div className="bg-white min-h-screen">
+    <div className="flex flex-col min-h-screen bg-white">
       {/* Header */}
       <MinisterHeader2 />
 
       {/* Content */}
-      <main className="container mx-auto px-6 md:px-12 py-24">
+      <main className="flex-grow container mx-auto px-4 sm:px-6 lg:px-12 py-6 sm:py-12">
         {/* Judul */}
-        <div className="text-center mb-12">
-          <h4 className="mt-12 text-3xl font-bold text-[#0C1E28]">Cireundeu</h4>
-          <h2 className="text-8xl font-extrabold text-[#0C1E28] mt-2">
+        <div className="text-center mb-8">
+          <h4 className="mt-28 sm:mt-60 text-4xl sm:text-6xl font-bold text-[#0C1E28]">
+            Cireundeu
+          </h4>
+          <h2 className="text-6xl sm:text-8xl font-extrabold text-[#0C1E28] mt-2">
             Hapus Program
           </h2>
         </div>
@@ -55,11 +62,9 @@ const HapusProgramPage = () => {
               className="relative group cursor-pointer"
               onClick={() => toggleSelectProgram(program.id)}
             >
-              <Image
+              <img
                 src={program.image}
                 alt={program.title}
-                width={500}
-                height={500}
                 className={`w-full h-auto rounded-2xl object-cover ${
                   selectedPrograms.includes(program.id) ? "opacity-50" : ""
                 }`}
@@ -91,7 +96,7 @@ const HapusProgramPage = () => {
           <div className="flex justify-end">
             <button
               onClick={handleDelete}
-              className="bg-[#DC673D] text-[#0C1E28] font-bold text-2xl px-8 py-4 rounded-full shadow-lg hover:scale-105 transition-transform duration-300"
+              className="bg-[#DC673D] text-[#0C1E28] font-bold text-lg sm:text-2xl px-6 sm:px-8 py-2 sm:py-4 rounded-full shadow-lg hover:scale-105 transition-transform duration-300"
             >
               Hapus
             </button>
@@ -99,7 +104,7 @@ const HapusProgramPage = () => {
         )}
       </main>
 
-      {/* Footer2 */}
+      {/* Footer */}
       <Footer2 />
     </div>
   );

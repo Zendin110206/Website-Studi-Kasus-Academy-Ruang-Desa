@@ -1,4 +1,4 @@
-// components/ContactModal.js
+// frontend/components/ContactModal.js
 "use client"; // Marking as a Client Component
 
 import { Fragment, useRef, useState } from "react";

@@ -1,4 +1,4 @@
-// components/ProgramSection.js
+// frontend/components/ProgramSection.js
 "use client";
 
 import { useState, useEffect, useRef } from "react";
@@ -94,7 +94,7 @@ const ProgramSection = () => {
             className="flex items-center justify-center bg-gradient-to-r from-blue-700 to-blue-900 rounded-full p-4 shadow-xl hover:scale-110 transition-transform duration-300 focus:outline-none"
             aria-label="Settings"
           >
-            <Cog6ToothIcon className="h-12 w-12 text-white" />
+            <Cog6ToothIcon className="h-10 w-10 text-white sm:h-12 sm:w-12 text-white" />
           </Link>
         </div>
 

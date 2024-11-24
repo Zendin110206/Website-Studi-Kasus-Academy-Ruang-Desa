@@ -1,4 +1,4 @@
-// components/MinisterHeader.js
+// frontend/components/MinisterHeader.js
 "use client";
 
 import { useState } from "react";
@@ -151,19 +151,7 @@ const MinisterHeader = () => {
               Layanan
             </Link>
           </li>
-          {/* Tombol Logout di Mobile */}
-          <li>
-            <button
-              onClick={() => {
-                handleLogout();
-                setIsMobileMenuOpen(false); // Tutup menu setelah logout
-              }}
-              className="flex items-center bg-red-600 text-white px-4 py-2 rounded-md hover:bg-red-700 transition duration-300"
-            >
-              <ArrowRightOnRectangleIcon className="h-5 w-5 mr-2" />
-              Logout
-            </button>
-          </li>
+          
         </ul>
       </motion.nav>
     </motion.header>

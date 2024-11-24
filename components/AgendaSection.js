@@ -1,4 +1,4 @@
-// components/AgendaSection.js
+// frontend/components/AgendaSection.js
 "use client";
 
 import { motion } from "framer-motion";
@@ -47,11 +47,11 @@ const AgendaSection = () => {
         {/* Settings Button */}
         <div className="absolute top-4 right-4">
           <a
-            href="/minister/agenda"  // Ubah ini sesuai dengan URL yang ingin dituju
-            className="flex items-center justify-center bg-gradient-to-r from-blue-700 to-blue-900 rounded-full p-4 shadow-xl hover:scale-110 transition-transform duration-300 hover:bg-blue-600 focus:outline-none"
+            href="/minister/agenda" // Ubah ini sesuai dengan URL yang ingin dituju
+            className="flex items-center justify-center bg-gradient-to-r from-blue-700 to-blue-900 rounded-full p-3 shadow-xl hover:scale-110 transition-transform duration-300 focus:outline-none sm:p-4"
             aria-label="Settings"
           >
-            <Cog6ToothIcon className="h-12 w-12 text-white" />
+            <Cog6ToothIcon className="h-10 w-10 text-white sm:h-12 sm:w-12 text-white" />
           </a>
         </div>
 

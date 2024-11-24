@@ -1,3 +1,5 @@
+// frontend/app/minister/program/page.js
+
 "use client";
 
 import Link from "next/link";
@@ -7,7 +9,7 @@ import Footer2 from "../../../components/Footer2"; // Pastikan path sesuai
 
 const ProgramPage = () => {
   return (
-    <div className="bg-white min-h-screen flex flex-col">
+    <div className="relative bg-white w-full overflow-x-hidden flex flex-col">
       {/* Header */}
       <MinisterHeader2 />
 
@@ -22,19 +24,19 @@ const ProgramPage = () => {
         </div>
 
         {/* Tombol Tambah, Edit, Hapus */}
-        <div className="flex flex-wrap justify-center gap-6 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6 mb-16">
           <Link href="/minister/program/add">
-            <button className="bg-[#B7DC3D] text-[#0C1E28] font-bold text-2xl px-6 md:px-8 py-3 md:py-4 rounded-full shadow-lg hover:scale-105 transition-transform duration-300">
+            <button className="w-full bg-[#B7DC3D] text-[#0C1E28] font-bold text-lg md:text-2xl px-4 md:px-6 py-2 md:py-3 rounded-full shadow-lg hover:scale-105 transition-transform duration-300">
               Tambah Program
             </button>
           </Link>
           <Link href="/minister/program/edit">
-            <button className="bg-[#DCCC3D] text-[#0C1E28] font-bold text-2xl px-6 md:px-8 py-3 md:py-4 rounded-full shadow-lg hover:scale-105 transition-transform duration-300">
+            <button className="w-full bg-[#DCCC3D] text-[#0C1E28] font-bold text-lg md:text-2xl px-4 md:px-6 py-2 md:py-3 rounded-full shadow-lg hover:scale-105 transition-transform duration-300">
               Edit Program
             </button>
           </Link>
           <Link href="/minister/program/delete">
-            <button className="bg-[#DC673D] text-[#0C1E28] font-bold text-2xl px-6 md:px-8 py-3 md:py-4 rounded-full shadow-lg hover:scale-105 transition-transform duration-300">
+            <button className="w-full bg-[#DC673D] text-[#0C1E28] font-bold text-lg md:text-2xl px-4 md:px-6 py-2 md:py-3 rounded-full shadow-lg hover:scale-105 transition-transform duration-300">
               Hapus Program
             </button>
           </Link>

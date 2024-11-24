@@ -1,4 +1,4 @@
-// app/signin/page.js
+// frontend/app/signin/page.js
 "use client";
 
 import { useState } from "react";
@@ -76,7 +76,7 @@ export default function SignIn() {
       <div className="absolute inset-0 bg-black opacity-40"></div>
 
       <motion.div
-        className="relative bg-white bg-opacity-90 backdrop-blur-md p-8 rounded-lg shadow-lg max-w-md w-full z-10"
+        className="relative bg-white overflow-x-hidden bg-opacity-90 backdrop-blur-md p-8 rounded-lg shadow-lg max-w-md w-full z-10"
         initial={{ opacity: 0, scale: 0.95 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6 }}
@@ -84,9 +84,7 @@ export default function SignIn() {
         <h2 className="text-gray-800 text-3xl font-semibold mb-6 text-center">
           Sign In
         </h2>
-        {error && (
-          <div className="mb-4 text-red-500 text-center">{error}</div>
-        )}
+        {error && <div className="mb-4 text-red-500 text-center">{error}</div>}
         <form onSubmit={handleSubmit} className="space-y-4">
           {/* Username Field */}
           <div className="relative">
@@ -177,7 +175,7 @@ export default function SignIn() {
 
         {/* Decorative Elements (Optional) */}
         <div className="mt-6 text-center text-gray-600 text-sm">
-          &copy; {new Date().getFullYear()} 2024. Hak Cipta Dilindungi | © Ruang Desa
+          &copy; {new Date().getFullYear()} Hak Cipta Dilindungi | © Ruang Desa
         </div>
       </motion.div>
     </div>

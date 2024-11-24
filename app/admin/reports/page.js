@@ -1,15 +1,15 @@
-// app/admin/reports/page.js
-
 import AdminHeader from "../../../components/AdminHeader";
 import AdminReportsList from "../../../components/AdminReportsList";
-import Footer from "../../../components/Footer";
+import AdminFooter from "../../../components/AdminFooter";
 
 const AdminReportsPage = () => {
   return (
-    <div className="bg-white min-h-screen">
+    <div className="flex flex-col min-h-screen bg-white">
       <AdminHeader />
-      <AdminReportsList />
-      <Footer />
+      <main className="flex-1">
+        <AdminReportsList />
+      </main>
+      <AdminFooter />
     </div>
   );
 };

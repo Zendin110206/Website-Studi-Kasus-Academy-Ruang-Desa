@@ -1,3 +1,5 @@
+// frontend/components/UserLayananSection.js
+
 "use client";
 
 import { motion } from "framer-motion";
@@ -6,19 +8,19 @@ const UserLayananSection = () => {
   const layananList = [
     {
       title: "Surat Keterangan Domisili",
-      file: "/templates/surat_keterangan_domisili.docx",
+      file: "/templates/Formulir-Surat-Keterangan-Domisili.pdf",
     },
     {
       title: "Surat Keterangan Pindah",
-      file: "/templates/surat_pindah.docx",
+      file: "/templates/Formulir-Surat-Keterangan-Pindah.pdf",
     },
     {
       title: "Surat Keterangan Kematian",
-      file: "/templates/surat_keterangan_kematian.docx",
+      file: "/templates/Formulir-Surat-Keterangan-Kematian.pdf",
     },
     {
       title: "Surat Keterangan Lahir",
-      file: "/templates/surat_keterangan_lahir.docx",
+      file: "/templates/Formulir-Surat-Keterangan-Kelahiran.pdf",
     },
   ];
 

@@ -1,12 +1,17 @@
+// frontend/app/minister/agenda/delete/page.js
+
 "use client";
 
 import MinisterHeader2 from "../../../../components/MinisterHeader2";
 import Footer2 from "../../../../components/Footer2";
 import { useState } from "react";
 import { CheckIcon } from "@heroicons/react/24/solid";
+import { FaSpinner } from "react-icons/fa"; // Pastikan untuk menginstal react-icons
 
 const DeleteAgendaPage = () => {
   const [selectedAgendas, setSelectedAgendas] = useState([]);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [deleteSuccess, setDeleteSuccess] = useState(false);
 
   const agendas = [
     {
@@ -33,7 +38,7 @@ const DeleteAgendaPage = () => {
       time: "12.00-13.00",
       contact: "Bu Retno",
     },
-    // Add more agendas as needed
+    // Tambahkan agenda lain jika diperlukan
   ];
 
   const toggleSelectAgenda = (id) => {
@@ -44,46 +49,82 @@ const DeleteAgendaPage = () => {
     );
   };
 
-  const handleDelete = () => {
-    // Implement delete logic here
-    alert("Agenda yang dipilih telah dihapus.");
-    // Reset selected agendas
+  const handleDelete = async () => {
+    setIsDeleting(true);
+    setDeleteSuccess(false);
+    
+    // Implementasikan logika penghapusan di sini
+    // Misalnya, panggil API untuk menghapus agenda yang dipilih
+
+    // Simulasi permintaan penghapusan dengan delay
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+
+    // Setelah berhasil
+    setIsDeleting(false);
+    setDeleteSuccess(true);
     setSelectedAgendas([]);
+
+    // Sembunyikan pesan sukses setelah beberapa detik
+    setTimeout(() => setDeleteSuccess(false), 3000);
   };
 
   return (
-    <div className="bg-white min-h-screen">
+    <div className="flex flex-col min-h-screen bg-white">
       {/* Header */}
       <MinisterHeader2 />
 
       {/* Content */}
-      <main className="container mx-auto px-6 md:px-12 py-24">
-        {/* Title */}
-        <div className="text-center mb-12">
-          <h4 className="mt-12 text-3xl font-bold text-[#0C1E28]">Cireundeu</h4>
-          <h2 className="text-8xl font-extrabold text-[#0C1E28] mt-2">
+      <main className="flex-grow container mx-auto px-4 sm:px-6 lg:px-12 py-6 sm:py-12">
+        {/* Judul */}
+        <div className="text-center mb-8">
+          <h4 className="mt-28 sm:mt-60 text-4xl sm:text-6xl font-bold text-[#0C1E28]">
+            Cireundeu
+          </h4>
+          <h2 className="text-6xl sm:text-8xl font-extrabold text-[#0C1E28] mt-2">
             Hapus Agenda
           </h2>
         </div>
 
-        {/* Delete Button */}
+        {/* Tombol Hapus */}
         {selectedAgendas.length > 0 && (
           <div className="flex justify-end mb-6">
             <button
               onClick={handleDelete}
-              className="bg-[#DC673D] text-[#0C1E28] font-bold text-2xl px-6 py-3 rounded-full shadow-lg hover:scale-105 transition-transform duration-300"
+              className={`bg-[#DC673D] text-[#0C1E28] font-bold text-lg sm:text-xl px-6 sm:px-8 py-2 sm:py-3 rounded-full shadow-lg hover:scale-105 transition-transform duration-300 flex items-center justify-center ${
+                isDeleting ? "cursor-not-allowed opacity-50" : ""
+              }`}
+              disabled={isDeleting}
             >
-              Hapus
+              {isDeleting ? (
+                <FaSpinner className="animate-spin h-6 w-6 mr-2" />
+              ) : deleteSuccess ? (
+                <CheckIcon className="h-6 w-6 mr-2" />
+              ) : null}
+              {isDeleting
+                ? "Menghapus..."
+                : deleteSuccess
+                ? "Berhasil Dihapus"
+                : "Hapus"}
             </button>
           </div>
         )}
 
-        {/* Agenda List */}
+        {/* Notifikasi Sukses */}
+        {deleteSuccess && (
+          <div className="flex items-center bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative mb-6" role="alert">
+            <CheckIcon className="h-6 w-6 mr-2" />
+            <span className="block sm:inline">Agenda yang dipilih telah dihapus.</span>
+          </div>
+        )}
+
+        {/* Daftar Agenda dengan Checkbox */}
         <div className="space-y-8">
           {agendas.map((agenda) => (
             <div
               key={agenda.id}
-              className="bg-[#DCCC3D] rounded-2xl p-6 shadow-lg relative cursor-pointer"
+              className={`bg-[#DCCC3D] rounded-2xl p-6 sm:p-8 shadow-lg relative cursor-pointer ${
+                selectedAgendas.includes(agenda.id) ? "border-4 border-green-500" : ""
+              }`}
               onClick={() => toggleSelectAgenda(agenda.id)}
             >
               {/* Checkbox */}
@@ -91,7 +132,7 @@ const DeleteAgendaPage = () => {
                 <div
                   className={`w-8 h-8 rounded-full border-4 ${
                     selectedAgendas.includes(agenda.id)
-                      ? "bg-[#B7DC3D] border-[#B7DC3D]"
+                      ? "bg-green-500 border-green-500"
                       : "bg-white border-gray-300"
                   } flex items-center justify-center`}
                 >
@@ -100,27 +141,27 @@ const DeleteAgendaPage = () => {
                   )}
                 </div>
               </div>
-              {/* Title */}
-              <h3 className="text-4xl font-extrabold text-[#0C1E28] mb-4">
+              {/* Judul */}
+              <h3 className="text-3xl sm:text-4xl font-extrabold text-[#0C1E28] mb-4">
                 {agenda.title}
               </h3>
               {/* Details */}
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-4 text-[#0C1E28]">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-[#0C1E28]">
                 <div>
-                  <p className="font-medium text-2xl">Tanggal</p>
-                  <p className="font-bold text-2xl">{agenda.date}</p>
+                  <p className="font-medium text-xl sm:text-2xl">Tanggal</p>
+                  <p className="font-bold text-xl sm:text-2xl">{agenda.date}</p>
                 </div>
                 <div>
-                  <p className="font-medium text-2xl">Lokasi</p>
-                  <p className="font-bold text-2xl">{agenda.location}</p>
+                  <p className="font-medium text-xl sm:text-2xl">Lokasi</p>
+                  <p className="font-bold text-xl sm:text-2xl">{agenda.location}</p>
                 </div>
                 <div>
-                  <p className="font-medium text-2xl">Waktu</p>
-                  <p className="font-bold text-2xl">{agenda.time}</p>
+                  <p className="font-medium text-xl sm:text-2xl">Waktu</p>
+                  <p className="font-bold text-xl sm:text-2xl">{agenda.time}</p>
                 </div>
                 <div>
-                  <p className="font-medium text-2xl">CP</p>
-                  <p className="font-bold text-2xl">{agenda.contact}</p>
+                  <p className="font-medium text-xl sm:text-2xl">CP</p>
+                  <p className="font-bold text-xl sm:text-2xl">{agenda.contact}</p>
                 </div>
               </div>
             </div>
@@ -128,7 +169,7 @@ const DeleteAgendaPage = () => {
         </div>
       </main>
 
-      {/* Footer2 */}
+      {/* Footer */}
       <Footer2 />
     </div>
   );

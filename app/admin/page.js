@@ -1,40 +1,59 @@
-// app/admin/page.js
+// frontend/app/admin/page.js
 
 import AdminHeader from "../../components/AdminHeader";
-import Footer from "../../components/Footer";
+import AdminFooter from "../../components/AdminFooter";
+
+const stats = [
+  {
+    title: "Total Users",
+    value: "100",
+    bgColor: "bg-yellow-400",
+    textColor: "text-gray-900",
+  },
+  {
+    title: "Pending Reports",
+    value: "5",
+    bgColor: "bg-red-500",
+    textColor: "text-white",
+  },
+  {
+    title: "Other Stats",
+    value: "N/A",
+    bgColor: "bg-blue-800",
+    textColor: "text-white",
+  },
+];
 
 const AdminDashboardPage = () => {
   return (
-    <div className="flex flex-col min-h-screen bg-white">
+    <div className="flex flex-col min-h-screen bg-white relative w-full overflow-x-hidden">
       {/* Header */}
       <AdminHeader />
 
       {/* Main Content */}
-      <main className="flex-1 container mx-auto px-6 md:px-12 py-12">
-        <h2 className="mt-28 text-4xl font-bold text-center text-[#0C1E28] mb-12">
+      <main className="flex-1 container mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <h2 className="mt-28 sm:mt-48 text-3xl sm:text-4xl font-bold text-center text-gray-800 mb-8">
           Admin Dashboard
         </h2>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {/* Total Users */}
-          <div className="bg-[#DCCC3D] rounded-2xl p-6 shadow-lg text-center">
-            <h3 className="text-2xl font-bold text-[#0C1E28] mb-4">Total Users</h3>
-            <p className="text-6xl font-extrabold text-[#0C1E28]">100</p>
-          </div>
-          {/* Total Reports */}
-          <div className="bg-[#DC673D] rounded-2xl p-6 shadow-lg text-center">
-            <h3 className="text-2xl font-bold text-white mb-4">Pending Reports</h3>
-            <p className="text-6xl font-extrabold text-white">5</p>
-          </div>
-          {/* Other Statistics */}
-          <div className="bg-[#0C1E28] rounded-2xl p-6 shadow-lg text-center">
-            <h3 className="text-2xl font-bold text-white mb-4">Other Stats</h3>
-            <p className="text-6xl font-extrabold text-white">N/A</p>
-          </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {stats.map((stat, index) => (
+            <div
+              key={index}
+              className={`${stat.bgColor} rounded-2xl p-6 shadow-lg transition-transform transform hover:scale-105`}
+            >
+              <h3 className={`text-xl sm:text-2xl font-semibold mb-2 ${stat.textColor}`}>
+                {stat.title}
+              </h3>
+              <p className={`text-4xl sm:text-6xl font-extrabold ${stat.textColor}`}>
+                {stat.value}
+              </p>
+            </div>
+          ))}
         </div>
       </main>
 
       {/* Footer */}
-      <Footer />
+      <AdminFooter />
     </div>
   );
 };

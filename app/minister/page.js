@@ -1,4 +1,4 @@
-"use client";// app/minister/page.js
+"use client"; // frontend/app/minister/page.js
 
 import MinisterHeader from "../../components/MinisterHeader";
 import Footer from "../../components/Footer";
@@ -11,13 +11,15 @@ import { motion } from "framer-motion";
 
 export default function MinisterHomePage() {
   return (
-    <div className="relative bg-white">
+    <div className="relative bg-white w-full overflow-x-hidden">
       <MinisterHeader />
       <main className="pt-20">
         {/* Hero Section */}
         <section
           className="relative h-screen bg-cover bg-center"
-          style={{ backgroundImage: "url('/assets/minister/Background Pict.png')" }}
+          style={{
+            backgroundImage: "url('/assets/minister/Background Pict.png')",
+          }}
         >
           <div className="absolute inset-0 bg-black opacity-60"></div>
           <div className="container mx-auto relative z-10 flex flex-col justify-center items-center h-full text-center text-white px-6">

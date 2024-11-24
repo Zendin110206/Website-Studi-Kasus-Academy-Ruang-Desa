@@ -1,8 +1,6 @@
-// app/admin/users/page.js
-
 import AdminHeader from "../../../components/AdminHeader";
 import AdminUserList from "../../../components/AdminUserList";
-import Footer from "../../../components/Footer";
+import AdminFooter from "../../../components/AdminFooter";
 
 const AdminUserManagementPage = () => {
   return (
@@ -11,16 +9,12 @@ const AdminUserManagementPage = () => {
       <AdminHeader />
 
       {/* Main Content */}
-      <main className="flex-1 container mx-auto px-6 md:px-12 py-0">
-        {/* You can add a title or any other content here if needed */}
-        <h2 className="text-4xl sm:text-5xl font-bold text-center text-[#0C1E28] dark:text-white mb-4">
-          User Management
-        </h2>
+      <main className="flex-1">
         <AdminUserList />
       </main>
 
-      {/* Footer */}
-      <Footer />
+      {/* AdminFooter */}
+      <AdminFooter />
     </div>
   );
 };

@@ -1,4 +1,4 @@
-// components/MinisterHeader2.js
+// frontend/components/MinisterHeader2.js
 "use client";
 
 import { useState } from "react";

@@ -1,4 +1,4 @@
-// components/AddMessageForm.js
+// frontend/components/AddMessageForm.js
 "use client";
 
 import { useState } from "react";

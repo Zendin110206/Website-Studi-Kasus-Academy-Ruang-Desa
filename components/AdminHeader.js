@@ -1,9 +1,6 @@
-// components/AdminHeader.js
-
 "use client";
 
-import React from "react";
-import { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import {
@@ -17,6 +14,7 @@ import { useRouter } from "next/navigation";
 const NAV_LINKS = [
   { href: "/admin", label: "Dashboard" },
   { href: "/admin/users", label: "Users" },
+  { href: "/admin/reports", label: "Reports" }, // Added Reports Link
   // Add more admin-specific links here
 ];
 

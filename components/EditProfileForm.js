@@ -1,4 +1,4 @@
-// components/EditProfileForm.js
+// frontend/components/EditProfileForm.js
 "use client";
 
 import { useState, useEffect } from "react";

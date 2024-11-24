@@ -1,3 +1,5 @@
+// frontend/components/UserAgendaSection.js
+
 "use client";
 
 import { motion } from "framer-motion";

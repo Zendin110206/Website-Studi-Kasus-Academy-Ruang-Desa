@@ -1,10 +1,9 @@
-// components/LayananSection.js
+// frontend/components/LayananSection.js
 "use client";
 
 import { motion } from "framer-motion";
 import { Cog6ToothIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
-
 
 const LayananSection = () => {
   const layananList = [
@@ -37,9 +36,9 @@ const LayananSection = () => {
 
   const handleDownload = (fileUrl) => {
     // Memicu pengunduhan file saat div diklik
-    const link = document.createElement('a');
+    const link = document.createElement("a");
     link.href = fileUrl;
-    link.download = fileUrl.split('/').pop();  // Nama file dari URL
+    link.download = fileUrl.split("/").pop(); // Nama file dari URL
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -51,11 +50,11 @@ const LayananSection = () => {
         {/* Tombol Settings */}
         <div className="absolute top-4 right-4">
           <a
-            href="/minister/layanan"  // Ubah ini sesuai dengan URL yang ingin dituju
-            className="flex items-center justify-center bg-gradient-to-r from-blue-700 to-blue-900 rounded-full p-4 shadow-xl hover:scale-110 transition-transform duration-300 hover:bg-blue-600 focus:outline-none"
+            href="/minister/layanan" // Ubah ini sesuai dengan URL yang ingin dituju
+            className="flex items-center justify-center bg-gradient-to-r from-blue-700 to-blue-900 rounded-full p-3 shadow-xl hover:scale-110 transition-transform duration-300 focus:outline-none sm:p-4"
             aria-label="Settings"
           >
-            <Cog6ToothIcon className="h-12 w-12 text-white" />
+            <Cog6ToothIcon className="h-10 w-10 text-white sm:h-12 sm:w-12 text-white" />
           </a>
         </div>
 
@@ -84,7 +83,9 @@ const LayananSection = () => {
               onClick={() => handleDownload(layanan.file)} // Memicu pengunduhan saat div diklik
             >
               <div className="bg-gray-800 rounded-lg p-6 text-center cursor-pointer">
-                <h4 className="text-white text-xl font-bold">{layanan.title}</h4>
+                <h4 className="text-white text-xl font-bold">
+                  {layanan.title}
+                </h4>
               </div>
             </motion.div>
           ))}

@@ -1,3 +1,5 @@
+// frontend/components/UserHeader.js
+
 "use client";
 
 import React from "react";

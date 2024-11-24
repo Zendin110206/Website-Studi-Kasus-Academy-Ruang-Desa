@@ -1,4 +1,4 @@
-// app/users/forum/[id]/page.js
+// frontend/app/users/forum/[id]/page.js
 
 import UserHeader from "../../../../components/UserHeader";
 import Footer from "../../../../components/Footer";
@@ -8,7 +8,7 @@ const ForumDetailPage = ({ params }) => {
   const { id } = params; // Get the forum ID from the URL
 
   return (
-    <div className="bg-white min-h-screen">
+    <div className="relative bg-white w-full overflow-x-hidden">
       {/* Header */}
       <UserHeader />
 

@@ -1,3 +1,5 @@
+// frontend/app/users/bantuan/[name]/page.js
+
 "use client";
 
 import { useState } from "react";
@@ -53,7 +55,7 @@ const BantuanPage = ({ params }) => {
   };
 
   return (
-    <div className="relative bg-white min-h-screen">
+    <div className="relative bg-white w-full overflow-x-hidden min-h-screen">
       {/* Header */}
       <UserHeader />
 
@@ -122,7 +124,9 @@ const BantuanPage = ({ params }) => {
                 <button
                   onClick={handleDaftar}
                   className={`relative bg-[#DCCC3D] text-[#0C1E28] font-bold text-xl px-8 py-3 rounded-full shadow-lg hover:bg-[#CBB736] transition duration-300 flex items-center ${
-                    isLoading || isSuccess ? "cursor-not-allowed opacity-70" : ""
+                    isLoading || isSuccess
+                      ? "cursor-not-allowed opacity-70"
+                      : ""
                   }`}
                   disabled={isLoading || isSuccess}
                 >
@@ -177,7 +181,7 @@ const BantuanPage = ({ params }) => {
                   </div>
                   {/* Navigasi setelah sukses (opsional) */}
                   <button
-                    onClick={() => router.push("/users/home")}
+                    onClick={() => router.push("/users")}
                     className="mt-4 bg-[#DCCC3D] text-[#0C1E28] font-bold text-xl px-6 py-2 rounded-full shadow-lg hover:bg-[#CBB736] transition duration-300"
                   >
                     Kembali ke Beranda

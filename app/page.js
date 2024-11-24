@@ -1,4 +1,4 @@
-// app/page.js
+// frontend/app/page.js
 "use client"; // Add this line to mark as a Client Component
 
 import { useState } from "react"; // Import useState

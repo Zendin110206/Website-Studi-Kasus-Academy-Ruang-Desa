@@ -1,4 +1,4 @@
-// components/ForumDetail.js
+// frontend/components/ForumDetail.js
 "use client";
 
 import { useState } from "react";

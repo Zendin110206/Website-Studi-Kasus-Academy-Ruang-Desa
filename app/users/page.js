@@ -1,4 +1,4 @@
-// app/pages/user/HomePage.js
+// frontend/app/users/page.js
 "use client";
 
 import { useState, useEffect } from "react";
@@ -37,7 +37,7 @@ const UserHomePage = () => {
   };
 
   return (
-    <div className="relative bg-white">
+    <div className="relative bg-white w-full overflow-x-hidden">
       {/* Header */}
       <UserHeader />
 
@@ -46,7 +46,9 @@ const UserHomePage = () => {
         {/* Hero Section */}
         <section
           className="relative h-screen bg-cover bg-center flex items-center justify-center"
-          style={{ backgroundImage: "url('/assets/minister/Background Pict.png')" }}
+          style={{
+            backgroundImage: "url('/assets/minister/Background Pict.png')",
+          }}
         >
           {/* Overlay */}
           <div className="absolute inset-0 bg-black opacity-60"></div>
